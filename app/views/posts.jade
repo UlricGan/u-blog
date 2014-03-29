@@ -1,0 +1,15 @@
+include layout
+
+.header.header-detail.header-blog
+	h1 Posts
+.main
+	ul
+		if uposts!= null
+			each post in uposts
+				li 
+					.blog
+						h3: a(href= '/posts/'+post._id)= post.title
+						p= post.author
+						p= post.main
+						p: a(href= '/posts/'+post._id) Read More
+

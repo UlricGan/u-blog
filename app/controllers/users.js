@@ -17,7 +17,7 @@ var login = function (req, res){
 		if(user){
 			if(user.password == password){
 				req.session.user=user;
-				res.redirect('/blog');
+				res.redirect('/posts');
 			}else{
 				req.flash('fail', 'Hey guy! Something is Wrong!');
 				res.redirect('/login');
