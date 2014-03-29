@@ -1,0 +1,10 @@
+include layout
+
+.main.login
+	form(action='/login', method='post')
+		if error!=null
+			p.fail.login-fail= error
+		input(type='text', name='aname', placeholder='Account Name')
+		input(type='password', name='password', placeholder='Password')
+		input(type='submit' value='Login')
+
