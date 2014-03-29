@@ -26,6 +26,21 @@ var newPost = function (req, res){
 	res.render('edit', {user: req.session.user});
 };
 
+var createPost = function (req, res){
+	var ntitle = req.body.title;
+	var nmain = req.body.main;
+	var nauthor = req.session.user.name;
+
+	Post.create({
+			title: ntitle,
+			author: nauthor,
+			main: nmain
+		}, function (err, post){
+			res.redirect('/posts/'+post._id);
+	});
+};
+
 exports.index = index;
 exports.show = show;
 exports.newPost = newPost;
+exports.createPost = createPost;

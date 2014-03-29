@@ -6,8 +6,8 @@ module.exports = function (app){
 
 	app.get('/posts', posts.index );
 	app.get('/posts/new', middleware.checkLogin, posts.newPost);
-	// app.post('/posts/create',
-	// 	middleware.checkLogin, middleware.checkPost, posts.createPost);
+	app.post('/posts/create',
+		middleware.checkLogin, middleware.checkPost, posts.createPost);
 	app.get('/posts/:id', posts.show);
 
 
