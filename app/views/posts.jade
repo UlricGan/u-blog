@@ -1,15 +1,22 @@
 include layout
 
-.header.header-detail.header-blog
+.header.hd-detail.hd-posts
 	h1 Posts
 .main
 	ul
 		if uposts!= null
 			each post in uposts
 				li 
-					.blog
-						h3: a(href= '/posts/'+post._id)= post.title
-						p= post.author
-						p= post.main
-						p: a(href= '/posts/'+post._id) Read More
+					.post.clearfix
+						.post-sidebar
+							span= (post.date.getMonth()+1)+'.'
+							span= (post.date.getDate())
+							div= (post.date.getFullYear())
+						.post-main
+							h3: a(href= '/posts/'+post._id)= post.title
+							p= post.author
+							p= post.main
+							p: a(href= '/posts/'+post._id) Read More
+script(src='/js/lib/jquery-1.10.2.min.js')
+script(src='/js/main.js')
 

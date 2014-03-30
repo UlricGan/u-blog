@@ -30,11 +30,13 @@ var createPost = function (req, res){
 	var ntitle = req.body.title;
 	var nmain = req.body.main;
 	var nauthor = req.session.user.name;
+	var ndate = new Date();
 
 	Post.create({
 			title: ntitle,
 			author: nauthor,
-			main: nmain
+			main: nmain,
+			date: ndate
 		}, function (err, post){
 			res.redirect('/posts/'+post._id);
 	});

@@ -3,7 +3,9 @@ include layout
 .main
 	form(action='/posts/create', method='post')
 		input(type='text', name='title')
-		input(type='text', name='main')
+		br
+		textarea(name='main', rows="20" cols="100")
+		br
 		input(type='submit', value='Submit')
 
 

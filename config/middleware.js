@@ -3,7 +3,7 @@
 var checkLogin = function(req, res, next){
 	var user = req.session.user;
 	if(!user){
-		res.redirect('/posts');
+		res.redirect('/login');
 	}else{
 		next();
 	}

@@ -37,13 +37,61 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
+	overflow: hidden;
 }
 
-.header.header-detail{
-	height: 500px;
+.header h1{
+	position: relative;
+	top: 100px;
+	font-size: 100px;
+	text-align: center;
+	color: white;
+}
+
+.header.hd-detail{
+	height: 380px;
+}
+
+.header.hd-posts{
+	background: url(../images/bg_hd_posts.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.post{
+	margin-bottom: 50px;
+}
+
+.post-main, .post-sidebar{
+	float: left;
+}
+
+.post-main{
+	margin-left: 50px;
+}
+
+.post-sidebar{
+	font-family: 'HelveticaNeue-Light',sans-serif;
+	color: #999999;
+	font-size: 30px;
+	text-align: right;
+}
+
+.post-sidebar div{
+	font-size: 20px;
+}
+
+.post-main a{
+	color: #444333;
+}
+
+.post-main h3{
+	font-size: 30px;
+	line-height: 1.5;
 }
 
 .main{
-	padding-top: 500px;
+	padding-top: 450px;
+	width: 800px;
+	margin: 0 auto;
 }
 
