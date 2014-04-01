@@ -1,8 +1,8 @@
 include layout
 
-.header.hd-detail.hd-posts
+.header.hd-posts.hd-list
 	h1 Posts
-.main
+.main.mn-list
 	ul
 		if uposts!= null
 			each post in uposts
@@ -15,7 +15,7 @@ include layout
 						.post-main
 							h3: a(href= '/posts/'+post._id)= post.title
 							p= post.author
-							p= post.main
+							div!= post.main
 							p: a(href= '/posts/'+post._id) Read More
 script(src='/js/lib/jquery-1.10.2.min.js')
 script(src='/js/main.js')

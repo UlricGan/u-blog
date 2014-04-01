@@ -1,5 +1,14 @@
 include layout
 
-.main
-	h1= onepost.title
-	p= onepost.main
+
+.header.hd-posts.hd-article
+.main.mn-article
+	.post-sidebar
+		span= (onepost.date.getMonth()+1)+'.'
+		span= (onepost.date.getDate())
+		div= (onepost.date.getFullYear())
+	.post-main
+		h1= onepost.title
+		p= 'by '+onepost.author
+		.article-body
+			!= onepost.main

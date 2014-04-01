@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var markdown = require('markdown').markdown;
 var Schema = mongoose.Schema;
 
 
@@ -18,6 +19,10 @@ postSchema.statics.getAll = function (callback){
 			callback(err);
 		}
 
+		posts.forEach(function(post){
+			post.main = markdown.toHTML(post.main);
+		});
+
 		callback(null, posts);
 	});
 };
@@ -28,6 +33,8 @@ postSchema.statics.getById = function (id, callback){
 		if(err){
 			callback(err);
 		}
+
+		post.main = markdown.toHTML(post.main);
 
 		callback(null, post);
 	});
